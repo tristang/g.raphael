@@ -45,7 +45,8 @@ Raphael.el.popup = function (dir, size, x, y) {
     cw = Math.max(bb.width / 2 - size, 0);
     ch = Math.max(bb.height / 2 - size, 0);
 
-    this.translate(x - bb.x - (center ? bb.width / 2 : 0), y - bb.y - (center ? bb.height / 2 : 0));
+    this.translate(x - (dir == 'right' ? bb.x2 : bb.x) - (center ? bb.width / 2 : 0), y - (dir == 'down' ? bb.y2 : bb.y) - (center ? bb.height / 2 : 0));
+
     bb = this.getBBox();
 
     var paths = {
